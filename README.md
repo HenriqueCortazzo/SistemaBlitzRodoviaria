@@ -3,7 +3,6 @@
 ## Descrição
 
 O Sistema de Blitz Rodoviária é uma aplicação desenvolvida para auxiliar as autoridades de trânsito na realização de blitzes rodoviárias. A aplicação permite o registro e acompanhamento das operações de blitz, facilitando a gestão e a eficiência dessas operações.
-OBS: O sistema será construído sem interface gráfica, com intuito de intensificação de logica e fins estudantis.
 
 ## Funcionalidades
 
@@ -18,4 +17,6 @@ OBS: O sistema será construído sem interface gráfica, com intuito de intensif
 3. Instale as dependências: `npm install`
 4. Inicie o servidor: `npm start`
 
+##Observação
 
+O sistema será construído sem interface gráfica, com intuito de intensificação de logica e fins estudantis.
