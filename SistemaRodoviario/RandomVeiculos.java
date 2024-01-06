@@ -17,7 +17,7 @@ public class RandomVeiculos {
         }
 
         for (String s: placasVeiculos){
-            System.out.println(s);
+            System.out.println("PLACA: "+s);
         }
     }
 }
