@@ -3,9 +3,7 @@ package SistemaRodoviario;
 import java.util.Scanner;
 
 public class Abordagem {
-    private int finalPlaca;
-    private String[] placas;
-    private String[] placasAbordadas = new String[10];
+    private final String[] placasAbordadas = new String[10];
 
     public void checarPlacas() {
         abordar();
@@ -14,10 +12,10 @@ public class Abordagem {
     private void abordar() {
         RandomVeiculos randomVeiculos = new RandomVeiculos();
         randomVeiculos.iniciarSistema();
-        placas = randomVeiculos.placasVeiculos;
+        String[] placas = randomVeiculos.placasVeiculos;
         Scanner sc = new Scanner(System.in);
         System.out.println("DIGITE O FINAL DA PLACA QUE DESEJA VERIFICAR: ");
-        finalPlaca = sc.nextInt();
+        int finalPlaca = sc.nextInt();
         for (int i = 0; i < placas.length; i++) {
             int numero = Character.getNumericValue(placas[i].charAt(6));
             if (finalPlaca == numero) {
@@ -25,9 +23,10 @@ public class Abordagem {
             }
         }
         for (String s : placasAbordadas) {
-                if (s!=null)
+            if (s != null)
                 System.out.println(s);
         }
+        sc.close();
     }
 
 
