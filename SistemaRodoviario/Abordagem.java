@@ -26,8 +26,11 @@ public class Abordagem {
             if (s != null)
                 System.out.println(s);
         }
+        verificarVeiculos();
         sc.close();
     }
+    private void verificarVeiculos(){
 
+    }
 
 }
