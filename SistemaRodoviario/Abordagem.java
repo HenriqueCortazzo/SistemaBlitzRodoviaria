@@ -48,28 +48,34 @@ public class Abordagem {
             System.out.println("O PORTADOR ESTÁ PORTANDO DOCUMENTOS? S/N");
             String portaDocumentos = scanner.next();
             double debitosVeiculo = licenciamento + ipva;
-
+            Situacao situacao = new Situacao();
+            situacao.relatorio();
             if (habilitacao.equalsIgnoreCase("s") && portaHabilitacao.equalsIgnoreCase("s") && portaDocumentos.equalsIgnoreCase("s") && debitosVeiculo == 0) {
                 veiculoRegular = true;
                 System.out.println(veiculoRegular);
+                situacao.relatorio();
                 //relatorio
             } else if (!habilitacao.equalsIgnoreCase("s") && !portaHabilitacao.equalsIgnoreCase("s") && portaDocumentos.equalsIgnoreCase("s") && debitosVeiculo == 0) {
                 veiculoRegular = false;
                 System.out.println(veiculoRegular);
+                situacao.relatorio();
                 //relatorio
                 //patio
             } else if (habilitacao.equalsIgnoreCase("s") && !portaHabilitacao.equalsIgnoreCase("s") && portaDocumentos.equalsIgnoreCase("s") && debitosVeiculo == 0) {
                 veiculoRegular = false;
                 System.out.println(veiculoRegular);
+                situacao.relatorio();
                 //relatorio
                 //multa
             } else if (habilitacao.equalsIgnoreCase("s") && portaHabilitacao.equalsIgnoreCase("s") && !portaDocumentos.equalsIgnoreCase("s") && debitosVeiculo == 0) {
                 veiculoRegular = true;
                 System.out.println(veiculoRegular);
+                situacao.relatorio();
                 //relatorio
             } else if (debitosVeiculo != 0) {
                 veiculoRegular = false;
                 System.out.println(veiculoRegular);
+                situacao.relatorio();
                 //relatorio
                 //patio
             }
