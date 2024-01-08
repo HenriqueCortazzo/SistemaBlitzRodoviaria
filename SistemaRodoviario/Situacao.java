@@ -1,14 +1,15 @@
 package SistemaRodoviario;
 
-import javax.swing.plaf.synth.SynthOptionPaneUI;
-
 public class Situacao {
 
-    public void relatorio(boolean sitVeicular,String tipo, String placa, double ipva, double licenciamento, String habilitacao, String pHabilitacao, String pDocumentos, double debitosTotais) {
+    public void relatorio(boolean sitVeicular, String tipo, String marca, String nome, String ano, String placa, double ipva, double licenciamento, String habilitacao, String pHabilitacao, String pDocumentos, double debitosTotais) {
         Abordagem abordagem = new Abordagem();
         System.out.println("\nTIPO DO VEÍCULO: " + tipo.toUpperCase());
+        System.out.println("MARCA DO VEÍCULO: " + marca.toUpperCase());
+        System.out.println("NOME DO VEÍCULO: " + nome.toUpperCase());
+        System.out.println("ANO DO VEÍCULO: " + ano.toUpperCase());
         System.out.println("PLACA DO VEÍCULO: " + placa.toUpperCase());
-        System.out.printf("VALOR IPVA EM ABERTO: R$ %.2f\n",ipva);
+        System.out.printf("VALOR IPVA EM ABERTO: R$ %.2f\n", ipva);
         System.out.printf("VALOR LICENCIAMENTO EM ABERTO: R$ %.2f\n", licenciamento);
         if (habilitacao.equalsIgnoreCase("s")) {
             System.out.println("HABILITAÇÃO: OK");
@@ -18,7 +19,6 @@ public class Situacao {
         if (pHabilitacao.equalsIgnoreCase("s")) {
             System.out.println("CIDADÃO PORTA HABILITAÇÃO: OK");
         } else {
-            // VOCE ESTA NA BRANCH SITUACAO E NAO FEZ O MERGE AINDA!!!!!!!
             System.out.println("CIDADÃO PORTA HABILITAÇÃO: NADA CONSTA");
         }
         if (pDocumentos.equalsIgnoreCase("s")) {
@@ -28,10 +28,11 @@ public class Situacao {
         }
         System.out.printf("DÉBITOS TOTAIS: R$ %.2f\n", debitosTotais);
 
-        if (sitVeicular){
+        if (sitVeicular) {
             System.out.println("VEÍCULO LIBERADO.");
-        }else{
+        } else {
             System.out.println("\nO VEÍCULO SERÁ DESTINADO AO PÁTIO MAIS PROXIMO.\n");
+            Patio patio = new Patio();
         }
     }
 

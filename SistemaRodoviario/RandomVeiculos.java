@@ -20,4 +20,7 @@ public class RandomVeiculos {
             System.out.println("PLACA: "+s);
         }
     }
+    private void renavam(){
+
+    }
 }

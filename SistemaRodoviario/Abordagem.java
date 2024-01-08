@@ -38,6 +38,13 @@ public class Abordagem {
                 System.out.println("QUAL O TIPO DO VEÍCULO?");
                 String tipoVeiculo = scanner.next();
                 String placaVeiculo = placasAbordadas[i];
+                System.out.println("MARCA DO VEÍCULO: ");
+                String marcaVeiculo = scanner.next();
+                System.out.println("NOME DO VEÍCULO: ");
+                String nomeVeiculo = scanner.next();
+                System.out.println("ANO DO VEÍCULO: ");
+                String anoVeiculo = scanner.next();
+
                 System.out.println("DIGITE O VALOR DO IPVA EM ABERTO: ");
                 double ipva = scanner.nextDouble();
                 System.out.println("DIGITE O VALOR DO LICENCIAMENTO EM ABERTO:");
@@ -53,26 +60,26 @@ public class Abordagem {
                 // situacao.relatorio();
                 if (habilitacao.equalsIgnoreCase("s") && portaHabilitacao.equalsIgnoreCase("s") && portaDocumentos.equalsIgnoreCase("s") && debitosVeiculo == 0) {
                     System.out.println(veiculoRegular);
-                    situacao.relatorio(veiculoRegular, tipoVeiculo, placaVeiculo, ipva, licenciamento, habilitacao, portaHabilitacao, portaDocumentos, debitosVeiculo);
+                    situacao.relatorio(veiculoRegular, tipoVeiculo, marcaVeiculo, nomeVeiculo, anoVeiculo, placaVeiculo, ipva, licenciamento, habilitacao, portaHabilitacao, portaDocumentos, debitosVeiculo);
                     //relatorio
                 } else if (!habilitacao.equalsIgnoreCase("s") && !portaHabilitacao.equalsIgnoreCase("s") && portaDocumentos.equalsIgnoreCase("s") && debitosVeiculo == 0) {
                     System.out.println(veiculoRegular);
-                    situacao.relatorio(veiculoRegular, tipoVeiculo, placaVeiculo, ipva, licenciamento, habilitacao, portaHabilitacao, portaDocumentos, debitosVeiculo);
+                    situacao.relatorio(veiculoRegular, tipoVeiculo, placaVeiculo, marcaVeiculo, nomeVeiculo, anoVeiculo, ipva, licenciamento, habilitacao, portaHabilitacao, portaDocumentos, debitosVeiculo);
 
                     //patio
                 } else if (habilitacao.equalsIgnoreCase("s") && !portaHabilitacao.equalsIgnoreCase("s") && portaDocumentos.equalsIgnoreCase("s") && debitosVeiculo == 0) {
                     veiculoRegular = false;
                     System.out.println(veiculoRegular);
-                    situacao.relatorio(veiculoRegular, tipoVeiculo, placaVeiculo, ipva, licenciamento, habilitacao, portaHabilitacao, portaDocumentos, debitosVeiculo);
+                    situacao.relatorio(veiculoRegular, tipoVeiculo, marcaVeiculo, nomeVeiculo, anoVeiculo, placaVeiculo, ipva, licenciamento, habilitacao, portaHabilitacao, portaDocumentos, debitosVeiculo);
                     //multa
                 } else if (habilitacao.equalsIgnoreCase("s") && portaHabilitacao.equalsIgnoreCase("s") && !portaDocumentos.equalsIgnoreCase("s") && debitosVeiculo == 0) {
                     veiculoRegular = true;
                     System.out.println(veiculoRegular);
-                    situacao.relatorio(veiculoRegular, tipoVeiculo, placaVeiculo, ipva, licenciamento, habilitacao, portaHabilitacao, portaDocumentos, debitosVeiculo);
+                    situacao.relatorio(veiculoRegular, tipoVeiculo, marcaVeiculo, nomeVeiculo, anoVeiculo, placaVeiculo, ipva, licenciamento, habilitacao, portaHabilitacao, portaDocumentos, debitosVeiculo);
                 } else if (debitosVeiculo != 0) {
                     veiculoRegular = false;
                     System.out.println(veiculoRegular);
-                    situacao.relatorio(veiculoRegular, tipoVeiculo, placaVeiculo, ipva, licenciamento, habilitacao, portaHabilitacao, portaDocumentos, debitosVeiculo);
+                    situacao.relatorio(veiculoRegular, tipoVeiculo, marcaVeiculo, nomeVeiculo, anoVeiculo, placaVeiculo, ipva, licenciamento, habilitacao, portaHabilitacao, portaDocumentos, debitosVeiculo);
                     //patio
                 }
             }
