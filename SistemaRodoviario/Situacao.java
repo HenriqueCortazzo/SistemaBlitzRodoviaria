@@ -18,6 +18,7 @@ public class Situacao {
         if (pHabilitacao.equalsIgnoreCase("s")) {
             System.out.println("CIDADÃO PORTA HABILITAÇÃO: OK");
         } else {
+            // VOCE ESTA NA BRANCH SITUACAO E NAO FEZ O MERGE AINDA!!!!!!!
             System.out.println("CIDADÃO PORTA HABILITAÇÃO: NADA CONSTA");
         }
         if (pDocumentos.equalsIgnoreCase("s")) {
