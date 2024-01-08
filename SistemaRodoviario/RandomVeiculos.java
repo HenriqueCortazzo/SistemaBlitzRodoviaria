@@ -8,9 +8,8 @@ public class RandomVeiculos {
     public void iniciarSistema() {
         chamarPlaca();
     }
-
+    Random rd = new Random();
     private void chamarPlaca() {
-        Random rd = new Random();
         for (int i = 0; i < placasVeiculos.length; i++) {
             finalNumeroPlacas[i] = 1 + rd.nextInt(9);
             placasVeiculos[i] += finalNumeroPlacas[i];
@@ -20,7 +19,8 @@ public class RandomVeiculos {
             System.out.println("PLACA: "+s);
         }
     }
-    private void renavam(){
-
+    public void renavam(){
+        long renavam = 9999999999L;
+        long randomNumber = Math.abs(rd.nextLong()) % renavam;
     }
 }
