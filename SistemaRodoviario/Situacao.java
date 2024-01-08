@@ -4,7 +4,7 @@ import javax.swing.plaf.synth.SynthOptionPaneUI;
 
 public class Situacao {
 
-    public void relatorio(String tipo, String placa, double ipva, double licenciamento, String habilitacao, String pHabilitacao, String pDocumentos, double debitosTotais) {
+    public void relatorio(boolean sitVeicular,String tipo, String placa, double ipva, double licenciamento, String habilitacao, String pHabilitacao, String pDocumentos, double debitosTotais) {
         Abordagem abordagem = new Abordagem();
         System.out.println("\nTIPO DO VEÍCULO: " + tipo.toUpperCase());
         System.out.println("PLACA DO VEÍCULO: " + placa.toUpperCase());
@@ -27,6 +27,12 @@ public class Situacao {
             System.out.println("CIDADÃO PORTA DOCUMENTOS: NADA CONSTA");
         }
         System.out.printf("DÉBITOS TOTAIS: R$ %.2f\n", debitosTotais);
+
+        if (sitVeicular){
+            System.out.println("VEÍCULO LIBERADO.");
+        }else{
+            System.out.println("\nO VEÍCULO SERÁ DESTINADO AO PÁTIO MAIS PROXIMO.\n");
+        }
     }
 
 }
