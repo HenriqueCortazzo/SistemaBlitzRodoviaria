@@ -2,9 +2,10 @@ package SistemaRodoviario;
 
 public class Situacao {
 
-    public void relatorio(boolean sitVeicular, String tipo, String marca, String nome, String ano, String placa, double ipva, double licenciamento, String habilitacao, String pHabilitacao, String pDocumentos, double debitosTotais) {
+    public void relatorio(long renavam, boolean sitVeicular, String tipo, String marca, String nome, String ano, String placa, double ipva, double licenciamento, String habilitacao, String pHabilitacao, String pDocumentos, double debitosTotais) {
         Abordagem abordagem = new Abordagem();
         System.out.println("\nTIPO DO VEÍCULO: " + tipo.toUpperCase());
+        System.out.println("\nRENAVAM DO VEÍCULO: " + renavam);
         System.out.println("MARCA DO VEÍCULO: " + marca.toUpperCase());
         System.out.println("NOME DO VEÍCULO: " + nome.toUpperCase());
         System.out.println("ANO DO VEÍCULO: " + ano.toUpperCase());

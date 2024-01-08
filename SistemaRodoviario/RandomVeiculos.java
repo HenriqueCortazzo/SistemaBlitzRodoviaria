@@ -19,8 +19,10 @@ public class RandomVeiculos {
             System.out.println("PLACA: "+s);
         }
     }
-    public void renavam(){
+    public long renavam(){
         long renavam = 9999999999L;
-        long randomNumber = Math.abs(rd.nextLong()) % renavam;
+        long randomNumber;
+        randomNumber = Math.abs(rd.nextLong()) % renavam;
+        return randomNumber;
     }
 }

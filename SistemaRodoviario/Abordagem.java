@@ -31,6 +31,7 @@ public class Abordagem {
     }
 
     private void verificarVeiculos() {
+        RandomVeiculos randomVeiculos = new RandomVeiculos();
         Scanner scanner = new Scanner(System.in);
         for (int i = 0; i < placasAbordadas.length; i++) {
             if (placasAbordadas[i] != null) {
@@ -38,6 +39,7 @@ public class Abordagem {
                 System.out.println("QUAL O TIPO DO VEÍCULO?");
                 String tipoVeiculo = scanner.next();
                 String placaVeiculo = placasAbordadas[i];
+                long renavam = randomVeiculos.renavam();
                 System.out.println("MARCA DO VEÍCULO: ");
                 String marcaVeiculo = scanner.next();
                 System.out.println("NOME DO VEÍCULO: ");
@@ -59,27 +61,19 @@ public class Abordagem {
                 Situacao situacao = new Situacao();
                 // situacao.relatorio();
                 if (habilitacao.equalsIgnoreCase("s") && portaHabilitacao.equalsIgnoreCase("s") && portaDocumentos.equalsIgnoreCase("s") && debitosVeiculo == 0) {
-                    System.out.println(veiculoRegular);
-                    situacao.relatorio(veiculoRegular, tipoVeiculo, marcaVeiculo, nomeVeiculo, anoVeiculo, placaVeiculo, ipva, licenciamento, habilitacao, portaHabilitacao, portaDocumentos, debitosVeiculo);
-                    //relatorio
-                } else if (!habilitacao.equalsIgnoreCase("s") && !portaHabilitacao.equalsIgnoreCase("s") && portaDocumentos.equalsIgnoreCase("s") && debitosVeiculo == 0) {
-                    System.out.println(veiculoRegular);
-                    situacao.relatorio(veiculoRegular, tipoVeiculo, placaVeiculo, marcaVeiculo, nomeVeiculo, anoVeiculo, ipva, licenciamento, habilitacao, portaHabilitacao, portaDocumentos, debitosVeiculo);
+                    veiculoRegular = true;
+                    situacao.relatorio(renavam, veiculoRegular, tipoVeiculo, marcaVeiculo, nomeVeiculo, anoVeiculo, placaVeiculo, ipva, licenciamento, habilitacao, portaHabilitacao, portaDocumentos, debitosVeiculo);
 
-                    //patio
+                } else if (!habilitacao.equalsIgnoreCase("s") && !portaHabilitacao.equalsIgnoreCase("s") && portaDocumentos.equalsIgnoreCase("s") && debitosVeiculo == 0) {
+                    situacao.relatorio(renavam, veiculoRegular, tipoVeiculo, placaVeiculo, marcaVeiculo, nomeVeiculo, anoVeiculo, ipva, licenciamento, habilitacao, portaHabilitacao, portaDocumentos, debitosVeiculo);
                 } else if (habilitacao.equalsIgnoreCase("s") && !portaHabilitacao.equalsIgnoreCase("s") && portaDocumentos.equalsIgnoreCase("s") && debitosVeiculo == 0) {
-                    veiculoRegular = false;
-                    System.out.println(veiculoRegular);
-                    situacao.relatorio(veiculoRegular, tipoVeiculo, marcaVeiculo, nomeVeiculo, anoVeiculo, placaVeiculo, ipva, licenciamento, habilitacao, portaHabilitacao, portaDocumentos, debitosVeiculo);
+                    situacao.relatorio(renavam, veiculoRegular, tipoVeiculo, marcaVeiculo, nomeVeiculo, anoVeiculo, placaVeiculo, ipva, licenciamento, habilitacao, portaHabilitacao, portaDocumentos, debitosVeiculo);
                     //multa
                 } else if (habilitacao.equalsIgnoreCase("s") && portaHabilitacao.equalsIgnoreCase("s") && !portaDocumentos.equalsIgnoreCase("s") && debitosVeiculo == 0) {
                     veiculoRegular = true;
-                    System.out.println(veiculoRegular);
-                    situacao.relatorio(veiculoRegular, tipoVeiculo, marcaVeiculo, nomeVeiculo, anoVeiculo, placaVeiculo, ipva, licenciamento, habilitacao, portaHabilitacao, portaDocumentos, debitosVeiculo);
+                    situacao.relatorio(renavam, veiculoRegular, tipoVeiculo, marcaVeiculo, nomeVeiculo, anoVeiculo, placaVeiculo, ipva, licenciamento, habilitacao, portaHabilitacao, portaDocumentos, debitosVeiculo);
                 } else if (debitosVeiculo != 0) {
-                    veiculoRegular = false;
-                    System.out.println(veiculoRegular);
-                    situacao.relatorio(veiculoRegular, tipoVeiculo, marcaVeiculo, nomeVeiculo, anoVeiculo, placaVeiculo, ipva, licenciamento, habilitacao, portaHabilitacao, portaDocumentos, debitosVeiculo);
+                    situacao.relatorio(renavam, veiculoRegular, tipoVeiculo, marcaVeiculo, nomeVeiculo, anoVeiculo, placaVeiculo, ipva, licenciamento, habilitacao, portaHabilitacao, portaDocumentos, debitosVeiculo);
                     //patio
                 }
             }
