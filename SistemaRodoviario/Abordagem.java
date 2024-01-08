@@ -86,6 +86,7 @@ public class Abordagem {
                 }
             }
         }
+
         scanner.close();
 
     }

@@ -34,7 +34,7 @@ public class Situacao {
         } else {
             System.out.println("\nO VEÍCULO SERÁ DESTINADO AO PÁTIO MAIS PROXIMO.\n");
             Patio patio = new Patio();
-            patio.retirarVeiculo(debitosTotais);
+            patio.retirarVeiculo(debitosTotais,placa,renavam);
         }
     }
 
