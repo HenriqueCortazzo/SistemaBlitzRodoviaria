@@ -75,6 +75,9 @@ public class Abordagem {
                 } else if (debitosVeiculo != 0) {
                     situacao.relatorio(renavam, veiculoRegular, tipoVeiculo, marcaVeiculo, nomeVeiculo, anoVeiculo, placaVeiculo, ipva, licenciamento, habilitacao, portaHabilitacao, portaDocumentos, debitosVeiculo);
                     //patio
+                } else {
+                    situacao.relatorio(renavam, veiculoRegular, tipoVeiculo, marcaVeiculo, nomeVeiculo, anoVeiculo, placaVeiculo, ipva, licenciamento, habilitacao, portaHabilitacao, portaDocumentos, debitosVeiculo);
+                    //patio
                 }
             }
         }
