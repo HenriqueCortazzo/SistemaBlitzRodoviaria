@@ -56,25 +56,33 @@ public class Abordagem {
                 String portaHabilitacao = scanner.next();
                 System.out.println("O PORTADOR ESTÁ PORTANDO DOCUMENTOS? S/N");
                 String portaDocumentos = scanner.next();
-                double debitosVeiculo = licenciamento + ipva;
+                double multa = 0;
+                double debitosVeiculo = licenciamento + ipva + multa;
                 Situacao situacao = new Situacao();
                 if (habilitacao.equalsIgnoreCase("s") && portaHabilitacao.equalsIgnoreCase("s") && portaDocumentos.equalsIgnoreCase("s") && debitosVeiculo == 0) {
                     veiculoRegular = true;
-                    situacao.relatorio(renavam, veiculoRegular, tipoVeiculo, marcaVeiculo, nomeVeiculo, anoVeiculo, placaVeiculo, ipva, licenciamento, habilitacao, portaHabilitacao, portaDocumentos, debitosVeiculo);
+                    debitosVeiculo += multa;
+                    situacao.relatorio(multa, renavam, veiculoRegular, tipoVeiculo, marcaVeiculo, nomeVeiculo, anoVeiculo, placaVeiculo, ipva, licenciamento, habilitacao, portaHabilitacao, portaDocumentos, debitosVeiculo);
                 } else if (!habilitacao.equalsIgnoreCase("s") && !portaHabilitacao.equalsIgnoreCase("s") && portaDocumentos.equalsIgnoreCase("s") && debitosVeiculo == 0) {
-                    situacao.relatorio(renavam, veiculoRegular, tipoVeiculo, placaVeiculo, marcaVeiculo, nomeVeiculo, anoVeiculo, ipva, licenciamento, habilitacao, portaHabilitacao, portaDocumentos, debitosVeiculo);
+                    multa = 1270;
+                    debitosVeiculo += multa;
+                    situacao.relatorio(multa, renavam, veiculoRegular, tipoVeiculo, placaVeiculo, marcaVeiculo, nomeVeiculo, anoVeiculo, ipva, licenciamento, habilitacao, portaHabilitacao, portaDocumentos, debitosVeiculo);
                 } else if (habilitacao.equalsIgnoreCase("s") && !portaHabilitacao.equalsIgnoreCase("s") && portaDocumentos.equalsIgnoreCase("s") && debitosVeiculo == 0) {
-                    situacao.relatorio(renavam, veiculoRegular, tipoVeiculo, marcaVeiculo, nomeVeiculo, anoVeiculo, placaVeiculo, ipva, licenciamento, habilitacao, portaHabilitacao, portaDocumentos, debitosVeiculo);
-                    //multa
+                    multa = 450;
+                    debitosVeiculo += multa;
+                    situacao.relatorio(multa, renavam, veiculoRegular, tipoVeiculo, marcaVeiculo, nomeVeiculo, anoVeiculo, placaVeiculo, ipva, licenciamento, habilitacao, portaHabilitacao, portaDocumentos, debitosVeiculo);
                 } else if (habilitacao.equalsIgnoreCase("s") && portaHabilitacao.equalsIgnoreCase("s") && !portaDocumentos.equalsIgnoreCase("s") && debitosVeiculo == 0) {
                     veiculoRegular = true;
-                    situacao.relatorio(renavam, veiculoRegular, tipoVeiculo, marcaVeiculo, nomeVeiculo, anoVeiculo, placaVeiculo, ipva, licenciamento, habilitacao, portaHabilitacao, portaDocumentos, debitosVeiculo);
+                    debitosVeiculo += multa;
+                    situacao.relatorio(multa, renavam, veiculoRegular, tipoVeiculo, marcaVeiculo, nomeVeiculo, anoVeiculo, placaVeiculo, ipva, licenciamento, habilitacao, portaHabilitacao, portaDocumentos, debitosVeiculo);
                 } else if (debitosVeiculo != 0) {
-                    situacao.relatorio(renavam, veiculoRegular, tipoVeiculo, marcaVeiculo, nomeVeiculo, anoVeiculo, placaVeiculo, ipva, licenciamento, habilitacao, portaHabilitacao, portaDocumentos, debitosVeiculo);
-                    //patio
+                    multa = 320;
+                    debitosVeiculo += multa;
+                    situacao.relatorio(multa, renavam, veiculoRegular, tipoVeiculo, marcaVeiculo, nomeVeiculo, anoVeiculo, placaVeiculo, ipva, licenciamento, habilitacao, portaHabilitacao, portaDocumentos, debitosVeiculo);
                 } else {
-                    situacao.relatorio(renavam, veiculoRegular, tipoVeiculo, marcaVeiculo, nomeVeiculo, anoVeiculo, placaVeiculo, ipva, licenciamento, habilitacao, portaHabilitacao, portaDocumentos, debitosVeiculo);
-                    //patio
+                    multa = 815.80;
+                    debitosVeiculo += multa;
+                    situacao.relatorio(multa, renavam, veiculoRegular, tipoVeiculo, marcaVeiculo, nomeVeiculo, anoVeiculo, placaVeiculo, ipva, licenciamento, habilitacao, portaHabilitacao, portaDocumentos, debitosVeiculo);
                 }
             }
         }
