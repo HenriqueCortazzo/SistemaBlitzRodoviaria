@@ -46,7 +46,6 @@ public class Abordagem {
                 String nomeVeiculo = scanner.next();
                 System.out.println("ANO DO VEÍCULO: ");
                 String anoVeiculo = scanner.next();
-
                 System.out.println("DIGITE O VALOR DO IPVA EM ABERTO: ");
                 double ipva = scanner.nextDouble();
                 System.out.println("DIGITE O VALOR DO LICENCIAMENTO EM ABERTO:");
@@ -59,11 +58,9 @@ public class Abordagem {
                 String portaDocumentos = scanner.next();
                 double debitosVeiculo = licenciamento + ipva;
                 Situacao situacao = new Situacao();
-                // situacao.relatorio();
                 if (habilitacao.equalsIgnoreCase("s") && portaHabilitacao.equalsIgnoreCase("s") && portaDocumentos.equalsIgnoreCase("s") && debitosVeiculo == 0) {
                     veiculoRegular = true;
                     situacao.relatorio(renavam, veiculoRegular, tipoVeiculo, marcaVeiculo, nomeVeiculo, anoVeiculo, placaVeiculo, ipva, licenciamento, habilitacao, portaHabilitacao, portaDocumentos, debitosVeiculo);
-
                 } else if (!habilitacao.equalsIgnoreCase("s") && !portaHabilitacao.equalsIgnoreCase("s") && portaDocumentos.equalsIgnoreCase("s") && debitosVeiculo == 0) {
                     situacao.relatorio(renavam, veiculoRegular, tipoVeiculo, placaVeiculo, marcaVeiculo, nomeVeiculo, anoVeiculo, ipva, licenciamento, habilitacao, portaHabilitacao, portaDocumentos, debitosVeiculo);
                 } else if (habilitacao.equalsIgnoreCase("s") && !portaHabilitacao.equalsIgnoreCase("s") && portaDocumentos.equalsIgnoreCase("s") && debitosVeiculo == 0) {
