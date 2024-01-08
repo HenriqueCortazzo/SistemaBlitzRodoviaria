@@ -1,4 +1,4 @@
 package SistemaRodoviario;
 
-public class Radar {
+public class ConclusaoGeral {
 }
