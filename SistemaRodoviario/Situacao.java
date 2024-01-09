@@ -38,7 +38,7 @@ public class Situacao {
             Patio.veiculosLiberados++;
             for (int i = 0; i < veiculosLiberados.length; i++) {
                 if (veiculosLiberados[i] == null) {
-                    veiculosLiberados[i] = "MARCA :" + marca + " | NOME: " + nome + " | PLACA: " + placa + " | RENAVAM:" + renavam;
+                    veiculosLiberados[i] = "MARCA :" + marca.toUpperCase() + " | NOME: " + nome.toUpperCase() + " | PLACA: " + placa + " | RENAVAM:" + renavam;
                     break;
                 }
             }

@@ -84,19 +84,28 @@ public class Abordagem {
                 }
             }
         }
-        ConclusaoGeral conclusaoGeral = new ConclusaoGeral();
-        conclusaoGeral.conclusao();
-        System.out.println("\n|----------VEÍCULOS LIBERADOS----------|\n");
-        for (String s : Situacao.veiculosLiberados) {
-            if (s != null) {
-                System.out.println(s);
+        boolean semVeiculosEncotrados = false;
+        for (int i = 0; i < placasAbordadas.length; i++) {
+            if (placasAbordadas[i] != null) {
+                ConclusaoGeral conclusaoGeral = new ConclusaoGeral();
+                conclusaoGeral.conclusao();
+                System.out.println("\n|----------VEÍCULOS LIBERADOS----------|\n");
+                for (String s : Situacao.veiculosLiberados) {
+                    if (s != null) {
+                        System.out.println(s);
+                    }
+                }
+                System.out.println("\n|----------VEÍCULOS APREENDIDOS----------|\n");
+                for (String a : Situacao.veiculosApreendidos) {
+                    if (a != null) {
+                        System.out.println(a);
+                    }
+                }
+                semVeiculosEncotrados = true;
             }
         }
-        System.out.println("\n|----------VEÍCULOS APREENDIDOS----------|\n");
-        for (String a : Situacao.veiculosApreendidos) {
-            if (a != null) {
-                System.out.println(a);
-            }
+        if (!semVeiculosEncotrados) {
+            System.out.println("NÃO FORAM ENCOTRADOS VEÍCULOS.");
         }
         scanner.close();
 

@@ -22,7 +22,7 @@ public class RandomVeiculos {
     public long renavam(){
         long renavam = 9999999999L;
         long randomNumber;
-        randomNumber = Math.abs(rd.nextLong()) % renavam;
+        randomNumber = 1111111111+Math.abs(rd.nextLong()) % renavam;
         return randomNumber;
     }
 }
