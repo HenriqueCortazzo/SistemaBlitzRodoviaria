@@ -6,10 +6,10 @@ public class Patio {
     private double valorDiaria = 350;
     private int diasNoPatio = 0;
 
-    public  int veiculosApreendidos = 0;
-    public  int veiculosLiberados = 0;
+    public static int veiculosApreendidos = 0;
+    public static int veiculosLiberados = 0;
 
-    public void retirarVeiculo(double debitos,String placa, long renavam) {
+    public void retirarVeiculo(double debitos, String placa, long renavam) {
         ConclusaoGeral conclusaoGeral = new ConclusaoGeral();
         Scanner scanner = new Scanner(System.in);
         System.out.println("QUANTOS DIAS O VEÍCULO PASSOU NO PÁTIO?");
@@ -38,7 +38,7 @@ public class Patio {
         if (prosseguir.equalsIgnoreCase("s")) {
             System.out.println("PROCESSO DE PAGAMENTO EM DESENVOLVIMENTO.\n");
             veiculosLiberados++;
-            conclusaoGeral.conclusao(veiculosApreendidos,veiculosLiberados,renavam,placa);
+            //conclusaoGeral.conclusao(veiculosApreendidos, veiculosLiberados, renavam, placa);
         } else {
             System.out.println("O VEÍCULO PERMANECERÁ NO PÁTIO.\n");
             veiculosApreendidos++;

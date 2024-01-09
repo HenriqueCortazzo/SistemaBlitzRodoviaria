@@ -86,6 +86,13 @@ public class Abordagem {
                 }
             }
         }
+        for (String s : placasAbordadas) {
+            ConclusaoGeral conclusaoGeral = new ConclusaoGeral();
+            Patio patio = new Patio();
+            if (s != null) {
+                conclusaoGeral.conclusao(patio.veiculosApreendidos, patio.veiculosLiberados, randomVeiculos.renavam(), s);
+            }
+        }
 
         scanner.close();
 

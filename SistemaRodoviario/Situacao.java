@@ -28,12 +28,14 @@ public class Situacao {
             System.out.println("CIDADÃO PORTA DOCUMENTOS: NADA CONSTA");
         }
         System.out.printf("DÉBITOS TOTAIS: R$ %.2f\n", debitosTotais);
+Patio patio = new Patio();
 
         if (sitVeicular) {
             System.out.println("\nVEÍCULO LIBERADO.");
+            Patio.veiculosLiberados++;
         } else {
             System.out.println("\nO VEÍCULO SERÁ DESTINADO AO PÁTIO MAIS PROXIMO.\n");
-            Patio patio = new Patio();
+           Patio.veiculosApreendidos++;
             patio.retirarVeiculo(debitosTotais,placa,renavam);
         }
     }
