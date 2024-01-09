@@ -37,8 +37,8 @@ public class Situacao {
             System.out.println("\nVEÍCULO LIBERADO.");
             Patio.veiculosLiberados++;
             for (int i = 0; i < veiculosLiberados.length; i++) {
-                if (veiculosLiberados[i]==null) {
-                    veiculosLiberados[i] = "PLACA: " + placa + " | RENAVAM:" + renavam;
+                if (veiculosLiberados[i] == null) {
+                    veiculosLiberados[i] = "MARCA :" + marca + " | NOME: " + nome + " | PLACA: " + placa + " | RENAVAM:" + renavam;
                     break;
                 }
             }
@@ -46,10 +46,12 @@ public class Situacao {
             System.out.println("\nO VEÍCULO SERÁ DESTINADO AO PÁTIO MAIS PROXIMO.\n");
             Patio.veiculosApreendidos++;
             for (int i = 0; i < veiculosApreendidos.length; i++) {
-                veiculosApreendidos[i] = "PLACA: " + placa + " | RENAVAM:" + renavam;
+                if (veiculosApreendidos[i] == null) {
+                    veiculosApreendidos[i] = "MARCA :" + marca + " | NOME: " + nome + " | PLACA: " + placa + " | RENAVAM:" + renavam;
+                    break;
+                }
             }
             patio.retirarVeiculo(debitosTotais, placa, renavam);
         }
     }
-
 }

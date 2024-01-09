@@ -90,13 +90,13 @@ public class Abordagem {
         Situacao situacao = new Situacao();
         Patio patio = new Patio();
         conclusaoGeral.conclusao(Patio.veiculosApreendidos, Patio.veiculosLiberados, randomVeiculos.renavam(), "");
-        System.out.println("|------------VEÍCULOS LIBERADOS------------|");
+        System.out.println("\n|----------VEÍCULOS LIBERADOS----------|\n");
         for (String s : Situacao.veiculosLiberados) {
-            if (s!= null) {
+            if (s != null) {
                 System.out.println(s);
             }
         }
-        System.out.println("|------------VEÍCULOS APREENDIDOS------------|");
+        System.out.println("\n|----------VEÍCULOS APREENDIDOS----------|\n");
         for (String a : Situacao.veiculosApreendidos) {
             if (a != null) {
                 System.out.println(a);
