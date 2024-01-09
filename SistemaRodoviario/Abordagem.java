@@ -87,17 +87,21 @@ public class Abordagem {
             }
         }
         ConclusaoGeral conclusaoGeral = new ConclusaoGeral();
+        Situacao situacao = new Situacao();
         Patio patio = new Patio();
-        conclusaoGeral.conclusao(Patio.veiculosApreendidos, Patio.veiculosLiberados, randomVeiculos.renavam(),"");
-        /*
-        for (String s : placasAbordadas) {
-             conclusaoGeral = new ConclusaoGeral();
-            patio = new Patio();
-            if (s != null) {
-                conclusaoGeral.conclusao(Patio.veiculosApreendidos, Patio.veiculosLiberados, randomVeiculos.renavam(), s);
+        conclusaoGeral.conclusao(Patio.veiculosApreendidos, Patio.veiculosLiberados, randomVeiculos.renavam(), "");
+        System.out.println("|------------VEÍCULOS LIBERADOS------------|");
+        for (String s : Situacao.veiculosLiberados) {
+            if (s!= null) {
+                System.out.println(s);
             }
         }
-*/
+        System.out.println("|------------VEÍCULOS APREENDIDOS------------|");
+        for (String a : Situacao.veiculosApreendidos) {
+            if (a != null) {
+                System.out.println(a);
+            }
+        }
         scanner.close();
 
     }
