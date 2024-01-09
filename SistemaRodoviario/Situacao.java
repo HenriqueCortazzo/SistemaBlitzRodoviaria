@@ -2,7 +2,7 @@ package SistemaRodoviario;
 
 public class Situacao {
 
-    public static String[] veiculosLiberados = new String[Patio.veiculosLiberados];
+    public static String[] veiculosLiberados = new String[10];
     public static String[] veiculosApreendidos = new String[10];
 
     public void relatorio(double multa, long renavam, boolean sitVeicular, String tipo, String marca, String nome, String ano, String placa, double ipva, double licenciamento, String habilitacao, String pHabilitacao, String pDocumentos, double debitosTotais) {
@@ -37,8 +37,9 @@ public class Situacao {
             System.out.println("\nVEÍCULO LIBERADO.");
             Patio.veiculosLiberados++;
             for (int i = 0; i < veiculosLiberados.length; i++) {
-                if (veiculosLiberados[i].equalsIgnoreCase(null)) {
+                if (veiculosLiberados[i]==null) {
                     veiculosLiberados[i] = "PLACA: " + placa + " | RENAVAM:" + renavam;
+                    break;
                 }
             }
         } else {
