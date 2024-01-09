@@ -86,14 +86,18 @@ public class Abordagem {
                 }
             }
         }
+        ConclusaoGeral conclusaoGeral = new ConclusaoGeral();
+        Patio patio = new Patio();
+        conclusaoGeral.conclusao(Patio.veiculosApreendidos, Patio.veiculosLiberados, randomVeiculos.renavam(),"");
+        /*
         for (String s : placasAbordadas) {
-            ConclusaoGeral conclusaoGeral = new ConclusaoGeral();
-            Patio patio = new Patio();
+             conclusaoGeral = new ConclusaoGeral();
+            patio = new Patio();
             if (s != null) {
-                conclusaoGeral.conclusao(patio.veiculosApreendidos, patio.veiculosLiberados, randomVeiculos.renavam(), s);
+                conclusaoGeral.conclusao(Patio.veiculosApreendidos, Patio.veiculosLiberados, randomVeiculos.renavam(), s);
             }
         }
-
+*/
         scanner.close();
 
     }

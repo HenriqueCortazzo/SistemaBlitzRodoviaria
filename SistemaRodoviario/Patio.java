@@ -37,11 +37,9 @@ public class Patio {
         String prosseguir = scanner.next();
         if (prosseguir.equalsIgnoreCase("s")) {
             System.out.println("PROCESSO DE PAGAMENTO EM DESENVOLVIMENTO.\n");
-            veiculosLiberados++;
             //conclusaoGeral.conclusao(veiculosApreendidos, veiculosLiberados, renavam, placa);
         } else {
             System.out.println("O VEÍCULO PERMANECERÁ NO PÁTIO.\n");
-            veiculosApreendidos++;
         }
     }
 }
