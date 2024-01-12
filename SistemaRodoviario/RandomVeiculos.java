@@ -7,8 +7,7 @@ public class RandomVeiculos {
         return placasVeiculos;
     }
 
-    private String[] placasVeiculos = new String[10];
-    private final int[] finalNumeroPlacas = new int[10];
+    private final String[] placasVeiculos = new String[10];
 
     public void iniciarSistema() {
         gerarPlaca();
@@ -25,26 +24,15 @@ public class RandomVeiculos {
             int segundoNumero = (1 + rd.nextInt(9));
             char quartaLetra = (char) ('A' + rd.nextInt(26));
             int quintoNumero = (1 + rd.nextInt(9));
-            String placaCrida = String.valueOf(primeiraLetra) +
+            String placaCrida = primeiraLetra +
                     String.valueOf(segundaLetra) +
-                    String.valueOf(terceiraLetra)+
-                    String.valueOf(primeiroNumero) +
-                    String.valueOf(segundoNumero) +
-                    String.valueOf(quartaLetra) +
-                    String.valueOf(quintoNumero);
+                    terceiraLetra +
+                    primeiroNumero +
+                    segundoNumero +
+                    quartaLetra +
+                    quintoNumero;
             placasVeiculos[i] = placaCrida;
         }
-        for (String s : placasVeiculos) {
-            System.out.println("PLACA: " + s);
-        }
-    }
-
-    private void chamarPlaca() {
-        for (int i = 0; i < placasVeiculos.length; i++) {
-            finalNumeroPlacas[i] = 1 + rd.nextInt(9);
-            placasVeiculos[i] += finalNumeroPlacas[i];
-        }
-
         for (String s : placasVeiculos) {
             System.out.println("PLACA: " + s);
         }
