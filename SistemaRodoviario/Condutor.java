@@ -1,7 +1,6 @@
 package SistemaRodoviario;
 
 import java.util.Scanner;
-
 public class Condutor {
     private String nomeCompleto;
     private String cpf;
@@ -10,17 +9,17 @@ public class Condutor {
     private final int senha = 1234;
 
     public Condutor() {
-
+        operacaoMonetaria();
     }
 
     private void operacaoMonetaria() {
         int opcao;
-        String designacao ="";
-        String numeroCartao="";
-        String cvc="";
-        String dataValidade="";
-        String dadosCartaoCompleto="";
-        saldoConta =3500;
+        String designacao = "";
+        String numeroCartao = "";
+        String cvc = "";
+        String dataValidade = "";
+        String dadosCartaoCompleto = "";
+        saldoConta = 3500;
         int limiteCartao = 1850;
         Scanner scanner = new Scanner(System.in);
         System.out.println("DIGITE O SEU NOME: ");
@@ -35,7 +34,7 @@ public class Condutor {
                 System.out.println("QUAL A DESIGNAÇÃO DO CARTÃO: ");
                 System.out.println("1 - VISA\n2 - MASTERCARD");
                 int op = scanner.nextInt();
-                switch (op){
+                switch (op) {
                     case 1:
                         System.out.println("DIGITE O NÚMERO DO CARTÃO: ");
                         numeroCartao = scanner.next();
@@ -43,16 +42,21 @@ public class Condutor {
                         cvc = scanner.next();
                         System.out.println("DIGITE A DATA DE VALIDADE DO CARTÃO");
                         dataValidade = scanner.next();
-                        dadosCartaoCompleto = String.format("DESIGNAÇÃO: %s\nNÚMERO: %s\nCVC: %s\nDATA DE VALIDADE: %s\n",designacao,numeroCartao,cvc,dataValidade);
+                        dadosCartaoCompleto = String.format("DESIGNAÇÃO: %s\nNÚMERO: %s\nCVC: %s\nDATA DE VALIDADE: %s\n", designacao, numeroCartao, cvc, dataValidade);
                         System.out.println("DIGITE SUA SENHA PARA CONFIRMAÇÃO: ");
                         int senhaVerificacao = scanner.nextInt();
-                        if (senhaVerificacao == senha){
+                        if (senhaVerificacao == senha) {
                             Patio patio = new Patio();
                             double valorRetirarVeiculo = patio.getValorRetirarVeiculo();
-                            if (saldoConta>=valorRetirarVeiculo){
+                            if (saldoConta >= valorRetirarVeiculo) {
                                 System.out.println("O VEÍCULO LIBERADO COM SUCESSO.");
+                                Patio.veiculosLiberados++;
+                                Patio.veiculosApreendidos--;
+
                             } else {
                                 System.out.println("SALDO INSUFICIENTE.");
+                                Patio.veiculosLiberados--;
+                                Patio.veiculosApreendidos++;
                             }
                         }
                         break;

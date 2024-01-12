@@ -31,9 +31,11 @@ public class Situacao {
             System.out.println("CIDADÃO PORTA DOCUMENTOS: NADA CONSTA");
         }
         System.out.printf("DÉBITOS TOTAIS: R$ %.2f\n", debitosTotais);
-        Patio patio = new Patio();
-
-        if (sitVeicular) {
+        relatoriVeicular(marca,placa,nome,renavam,sitVeicular,debitosTotais);
+    }
+    public void relatoriVeicular(String marca, String placa,String nome, long renavam,boolean situacaoVeicular,double debitosTotais){
+       Abordagem abordagem = new Abordagem();
+        if (situacaoVeicular) {
             System.out.println("\nVEÍCULO LIBERADO.");
             Patio.veiculosLiberados++;
             for (int i = 0; i < veiculosLiberados.length; i++) {
@@ -51,7 +53,7 @@ public class Situacao {
                     break;
                 }
             }
-            patio.retirarVeiculo(debitosTotais);
         }
     }
+
 }

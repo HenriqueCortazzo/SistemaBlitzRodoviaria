@@ -5,6 +5,12 @@ import java.util.Scanner;
 public class Abordagem {
     private final String[] placasAbordadas = new String[10];
 
+    public boolean isVeiculoRegular() {
+        return veiculoRegular;
+    }
+
+    private boolean veiculoRegular = false;
+
     public void checarPlacas() {
         abordar();
     }
@@ -35,7 +41,6 @@ public class Abordagem {
         Scanner scanner = new Scanner(System.in);
         for (String placasAbordada : placasAbordadas) {
             if (placasAbordada != null) {
-                boolean veiculoRegular;
                 System.out.println("QUAL O TIPO DO VEÍCULO?");
                 String tipoVeiculo = scanner.next();
                 long renavam = randomVeiculos.renavam();
@@ -110,4 +115,6 @@ public class Abordagem {
         scanner.close();
 
     }
+
+
 }
