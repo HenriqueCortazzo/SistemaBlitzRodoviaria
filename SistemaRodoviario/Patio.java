@@ -4,6 +4,11 @@ import java.util.Scanner;
 
 public class Patio {
 
+    public double getValorRetirarVeiculo() {
+        return valorRetirarVeiculo;
+    }
+
+    private double valorRetirarVeiculo = 0;
     public static int veiculosApreendidos = 0;
     public static int veiculosLiberados = 0;
 
@@ -13,7 +18,6 @@ public class Patio {
         int diasNoPatio = scanner.nextInt();
         System.out.println("ESTAMOS CALCULANDO, AGUARDE...");
         System.out.println("\n\n");
-        double valorRetirarVeiculo = 0;
         if (diasNoPatio > 0) {
             double valorDiaria = 350;
             if (diasNoPatio <= 3) {

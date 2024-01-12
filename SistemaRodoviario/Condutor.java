@@ -7,6 +7,8 @@ public class Condutor {
     private String cpf;
     private double saldoConta;
 
+    private final int senha = 1234;
+
     public Condutor() {
 
     }
@@ -30,7 +32,7 @@ public class Condutor {
         opcao = scanner.nextInt();
         switch (opcao) {
             case 1:
-                System.out.println("QUAL A DESIGINAÇÃO DO CARTÃO: ");
+                System.out.println("QUAL A DESIGNAÇÃO DO CARTÃO: ");
                 System.out.println("1 - VISA\n2 - MASTERCARD");
                 int op = scanner.nextInt();
                 switch (op){
@@ -39,7 +41,20 @@ public class Condutor {
                         numeroCartao = scanner.next();
                         System.out.println("DIGITE O CÓDIGO DE SEGURANÇA DO CARTÃO");
                         cvc = scanner.next();
-                        System.out.println("DIGITE O ");
+                        System.out.println("DIGITE A DATA DE VALIDADE DO CARTÃO");
+                        dataValidade = scanner.next();
+                        dadosCartaoCompleto = String.format("DESIGNAÇÃO: %s\nNÚMERO: %s\nCVC: %s\nDATA DE VALIDADE: %s\n",designacao,numeroCartao,cvc,dataValidade);
+                        System.out.println("DIGITE SUA SENHA PARA CONFIRMAÇÃO: ");
+                        int senhaVerificacao = scanner.nextInt();
+                        if (senhaVerificacao == senha){
+                            Patio patio = new Patio();
+                            double valorRetirarVeiculo = patio.getValorRetirarVeiculo();
+                            if (saldoConta>=valorRetirarVeiculo){
+                                System.out.println("O VEÍCULO LIBERADO COM SUCESSO.");
+                            } else {
+                                System.out.println("SALDO INSUFICIENTE.");
+                            }
+                        }
                         break;
                     case 2:
                         break;
