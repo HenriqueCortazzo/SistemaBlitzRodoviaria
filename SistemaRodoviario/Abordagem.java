@@ -12,7 +12,7 @@ public class Abordagem {
     private void abordar() {
         RandomVeiculos randomVeiculos = new RandomVeiculos();
         randomVeiculos.iniciarSistema();
-        String[] placas = randomVeiculos.placasVeiculos;
+        String[] placas = randomVeiculos.getPlacasVeiculos();
         Scanner sc = new Scanner(System.in);
         System.out.println("DIGITE O FINAL DA PLACA QUE DESEJA VERIFICAR: ");
         int finalPlaca = sc.nextInt();
