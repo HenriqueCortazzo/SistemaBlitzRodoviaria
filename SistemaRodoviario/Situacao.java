@@ -8,7 +8,7 @@ public class Situacao {
     public void relatorio(long renavam, boolean sitVeicular, String tipo, String marca, String nome, String ano, String placa, double ipva, double licenciamento, String habilitacao, String pHabilitacao, String pDocumentos, double debitosTotais) {
         new Abordagem();
         System.out.println("\nTIPO DO VEÍCULO: " + tipo.toUpperCase());
-        System.out.println("\nRENAVAM DO VEÍCULO: " + renavam);
+        System.out.println("RENAVAM DO VEÍCULO: " + renavam);
         System.out.println("MARCA DO VEÍCULO: " + marca.toUpperCase());
         System.out.println("NOME DO VEÍCULO: " + nome.toUpperCase());
         System.out.println("ANO DO VEÍCULO: " + ano.toUpperCase());
@@ -38,7 +38,7 @@ public class Situacao {
             Patio.veiculosLiberados++;
             for (int i = 0; i < veiculosLiberados.length; i++) {
                 if (veiculosLiberados[i] == null) {
-                    veiculosLiberados[i] = "MARCA :" + marca.toUpperCase() + " | NOME: " + nome.toUpperCase() + " | PLACA: " + placa + " | RENAVAM:" + renavam;
+                    veiculosLiberados[i] = "MARCA: " + marca.toUpperCase() + " | NOME: " + nome.toUpperCase() + " | PLACA: " + placa + " | RENAVAM:" + renavam;
                     break;
                 }
             }
@@ -47,7 +47,7 @@ public class Situacao {
             Patio.veiculosApreendidos++;
             for (int i = 0; i < veiculosApreendidos.length; i++) {
                 if (veiculosApreendidos[i] == null) {
-                    veiculosApreendidos[i] = "MARCA : " + marca + " | NOME: " + nome + " | PLACA: " + placa + " | RENAVAM:" + renavam;
+                    veiculosApreendidos[i] = "MARCA: " + marca.toUpperCase()+ " | NOME: " + nome.toUpperCase() + " | PLACA: " + placa + " | RENAVAM:" + renavam;
                     break;
                 }
             }
