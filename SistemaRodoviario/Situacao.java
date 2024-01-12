@@ -47,7 +47,7 @@ public class Situacao {
             Patio.veiculosApreendidos++;
             for (int i = 0; i < veiculosApreendidos.length; i++) {
                 if (veiculosApreendidos[i] == null) {
-                    veiculosApreendidos[i] = "MARCA :" + marca + " | NOME: " + nome + " | PLACA: " + placa + " | RENAVAM:" + renavam;
+                    veiculosApreendidos[i] = "MARCA : " + marca + " | NOME: " + nome + " | PLACA: " + placa + " | RENAVAM:" + renavam;
                     break;
                 }
             }
