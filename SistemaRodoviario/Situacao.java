@@ -49,13 +49,7 @@ public class Situacao {
         } else {
             System.out.println("\nO VEÍCULO SERÁ DESTINADO AO PÁTIO MAIS PROXIMO.\n");
             Patio.veiculosApreendidos++;
-            for (int i = 0; i < veiculosApreendidos.length; i++) {
-                if (veiculosApreendidos[i] == null) {
-                    veiculosApreendidos[i] = "MARCA: " + marca.toUpperCase() + " | NOME: " + nome.toUpperCase() + " | PLACA: " + placa + " | RENAVAM:" + renavam;
-                    break;
-                }
-            }
-            patio.retirarVeiculo(debitosTotais);
+            patio.retirarVeiculo(debitosTotais,nome,placa,marca,renavam);
         }
     }
 

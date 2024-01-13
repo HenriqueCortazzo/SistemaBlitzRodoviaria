@@ -90,7 +90,7 @@ public class Abordagem {
             }
         }
         boolean semVeiculosEncotrados = false;
-        for (int i = 0; i < 1; i++) {
+        for (int i = 0; i < placasAbordadas.length; i++) {
             if (placasAbordadas[i] != null) {
                 ConclusaoGeral conclusaoGeral = new ConclusaoGeral();
                 conclusaoGeral.conclusao();
@@ -107,6 +107,7 @@ public class Abordagem {
                     }
                 }
                 semVeiculosEncotrados = true;
+                break;
             }
         }
         if (!semVeiculosEncotrados) {

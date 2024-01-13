@@ -1,31 +1,23 @@
 package SistemaRodoviario;
 
 import java.util.Scanner;
+
 public class Condutor {
-    private String nomeCompleto;
-    private String cpf;
-    private double saldoConta;
 
-    private final int senha = 1234;
-
-    public Condutor() {
-        operacaoMonetaria();
-    }
-
-    private void operacaoMonetaria() {
+    public void operacaoMonetaria(String placa, String nome, long renavam, String marca) {
+        Abordagem abordagem = new Abordagem();
         int opcao;
         String designacao = "";
-        String numeroCartao = "";
-        String cvc = "";
-        String dataValidade = "";
-        String dadosCartaoCompleto = "";
-        saldoConta = 3500;
+        String numeroCartao;
+        String cvc;
+        String dataValidade;
+        double saldoConta = 3500;
         int limiteCartao = 1850;
         Scanner scanner = new Scanner(System.in);
         System.out.println("DIGITE O SEU NOME: ");
-        nomeCompleto = scanner.next();
+        String nomeCompleto = scanner.next();
         System.out.println("DIGITE O SEU CPF");
-        cpf = scanner.next();
+        String cpf = scanner.next();
         System.out.println("SELECIONE AS OPÇOES: ");
         System.out.println("1 - DÉBITO\n2 - CRÉDITO\n3 - PIX");
         opcao = scanner.nextInt();
@@ -34,6 +26,7 @@ public class Condutor {
                 System.out.println("QUAL A DESIGNAÇÃO DO CARTÃO: ");
                 System.out.println("1 - VISA\n2 - MASTERCARD");
                 int op = scanner.nextInt();
+                int senha = 1234;
                 switch (op) {
                     case 1:
                         System.out.println("DIGITE O NÚMERO DO CARTÃO: ");
@@ -42,21 +35,31 @@ public class Condutor {
                         cvc = scanner.next();
                         System.out.println("DIGITE A DATA DE VALIDADE DO CARTÃO");
                         dataValidade = scanner.next();
-                        dadosCartaoCompleto = String.format("DESIGNAÇÃO: %s\nNÚMERO: %s\nCVC: %s\nDATA DE VALIDADE: %s\n", designacao, numeroCartao, cvc, dataValidade);
                         System.out.println("DIGITE SUA SENHA PARA CONFIRMAÇÃO: ");
                         int senhaVerificacao = scanner.nextInt();
                         if (senhaVerificacao == senha) {
                             Patio patio = new Patio();
                             double valorRetirarVeiculo = patio.getValorRetirarVeiculo();
                             if (saldoConta >= valorRetirarVeiculo) {
-                                System.out.println("O VEÍCULO LIBERADO COM SUCESSO.");
+                                System.out.println("O VEÍCULO LIBERADO COM SUCESSO.\n");
                                 Patio.veiculosLiberados++;
                                 Patio.veiculosApreendidos--;
-
+                                for (int i = 0; i < Situacao.veiculosLiberados.length; i++) {
+                                    if (Situacao.veiculosLiberados[i] == null) {
+                                        Situacao.veiculosLiberados[i] = "MARCA: " + marca.toUpperCase() + " | NOME: " + nome.toUpperCase() + " | PLACA: " + placa + " | RENAVAM:" + renavam;
+                                        break;
+                                    }
+                                }
                             } else {
                                 System.out.println("SALDO INSUFICIENTE.");
                                 Patio.veiculosLiberados--;
                                 Patio.veiculosApreendidos++;
+                                for (int i = 0; i < Situacao.veiculosApreendidos.length; i++) {
+                                    if (Situacao.veiculosApreendidos[i] == null) {
+                                        Situacao.veiculosApreendidos[i] = "MARCA: " + marca.toUpperCase() + " | NOME: " + nome.toUpperCase() + " | PLACA: " + placa + " | RENAVAM:" + renavam;
+                                        break;
+                                    }
+                                }
                             }
                         }
                         break;

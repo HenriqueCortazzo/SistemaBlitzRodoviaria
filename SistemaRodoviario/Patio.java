@@ -12,12 +12,12 @@ public class Patio {
     public static int veiculosApreendidos = 0;
     public static int veiculosLiberados = 0;
 
-    public void retirarVeiculo(double debitos) {
+    public void retirarVeiculo(double debitos,String nome,String placa,String marca, long renavam) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("QUANTOS DIAS O VEÍCULO PASSOU NO PÁTIO?");
         int diasNoPatio = scanner.nextInt();
-        System.out.println("ESTAMOS CALCULANDO, AGUARDE...");
-        System.out.println("\n\n");
+        System.out.println("\nESTAMOS CALCULANDO, AGUARDE...");
+        System.out.println();
         if (diasNoPatio > 0) {
             double valorDiaria = 350;
             if (diasNoPatio <= 3) {
@@ -40,8 +40,15 @@ public class Patio {
         if (prosseguir.equalsIgnoreCase("s")) {
             System.out.println("PROCESSO DE PAGAMENTO EM DESENVOLVIMENTO.\n");
             Condutor condutor = new Condutor();
+            condutor.operacaoMonetaria(placa,nome,renavam,marca);
         } else {
             System.out.println("O VEÍCULO PERMANECERÁ NO PÁTIO.\n");
+            for (int i = 0; i < Situacao.veiculosApreendidos.length; i++) {
+                if (Situacao.veiculosApreendidos[i] == null) {
+                    Situacao.veiculosApreendidos[i] = "MARCA: " + marca.toUpperCase() + " | NOME: " + nome.toUpperCase() + " | PLACA: " + placa + " | RENAVAM:" + renavam;
+                    break;
+                }
+            }
         }
     }
 }
