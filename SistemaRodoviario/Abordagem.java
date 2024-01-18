@@ -66,7 +66,7 @@ public class Abordagem {
                 if (habilitacao.equalsIgnoreCase("s") && portaHabilitacao.equalsIgnoreCase("s") && portaDocumentos.equalsIgnoreCase("s") && debitosVeiculo == 0) {
                     veiculoRegular = true;
                     debitosVeiculo += multa;
-                    situacao.relatorio(renavam, veiculoRegular, tipoVeiculo, marcaVeiculo, nomeVeiculo, anoVeiculo, placasAbordada, ipva, licenciamento, habilitacao, portaHabilitacao, portaDocumentos, debitosVeiculo);
+                    situacao.relatorio(renavam, true, tipoVeiculo, marcaVeiculo, nomeVeiculo, anoVeiculo, placasAbordada, ipva, licenciamento, habilitacao, portaHabilitacao, portaDocumentos, debitosVeiculo);
                 } else if (!habilitacao.equalsIgnoreCase("s") && !portaHabilitacao.equalsIgnoreCase("s") && portaDocumentos.equalsIgnoreCase("s") && debitosVeiculo == 0) {
                     multa = 1270;
                     debitosVeiculo += multa;
@@ -90,8 +90,8 @@ public class Abordagem {
             }
         }
         boolean semVeiculosEncotrados = false;
-        for (int i = 0; i < placasAbordadas.length; i++) {
-            if (placasAbordadas[i] != null) {
+        for (String placasAbordada : placasAbordadas) {
+            if (placasAbordada != null) {
                 ConclusaoGeral conclusaoGeral = new ConclusaoGeral();
                 conclusaoGeral.conclusao();
                 System.out.println("\n|----------VEÍCULOS LIBERADOS----------|\n");
