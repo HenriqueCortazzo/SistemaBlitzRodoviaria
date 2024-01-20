@@ -43,6 +43,8 @@ public class Abordagem {
             if (placasAbordada != null) {
                 System.out.println("QUAL O TIPO DO VEÍCULO?");
                 String tipoVeiculo = scanner.next();
+                ValidacaoDeVeiculos validacaoDeVeiculos = new ValidacaoDeVeiculos();
+                validacaoDeVeiculos.validarVeiculo(tipoVeiculo);
                 long renavam = randomVeiculos.renavam();
                 System.out.println("MARCA DO VEÍCULO: ");
                 String marcaVeiculo = scanner.next();
