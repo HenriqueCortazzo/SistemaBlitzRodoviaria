@@ -70,26 +70,26 @@ public class Abordagem {
                 if (habilitacao.equalsIgnoreCase("s") && portaHabilitacao.equalsIgnoreCase("s") && portaDocumentos.equalsIgnoreCase("s") && debitosVeiculo == 0) {
                     veiculoRegular = true;
                     debitosVeiculo += multa;
-                    situacao.relatorio(renavam, true, validacaoDeVeiculos.getTipoCarroSave(), marcaVeiculo, nomeVeiculo, anoVeiculo, placasAbordada, ipva, licenciamento, habilitacao, portaHabilitacao, portaDocumentos, debitosVeiculo);
+                    situacao.relatorio(renavam, true, validacaoDeVeiculos.getTipoCarroSave(), validacaoDeVeiculos.getMarcaCarroSave(), nomeVeiculo, validacaoDeVeiculos.getAnoCarroSave(), placasAbordada, ipva, licenciamento, habilitacao, portaHabilitacao, portaDocumentos, debitosVeiculo);
                 } else if (!habilitacao.equalsIgnoreCase("s") && !portaHabilitacao.equalsIgnoreCase("s") && portaDocumentos.equalsIgnoreCase("s") && debitosVeiculo == 0) {
                     multa = 1270;
                     debitosVeiculo += multa;
-                    situacao.relatorio(renavam, false, validacaoDeVeiculos.getTipoCarroSave(), placasAbordada, marcaVeiculo, nomeVeiculo, anoVeiculo, ipva, licenciamento, habilitacao, portaHabilitacao, portaDocumentos, debitosVeiculo);
+                    situacao.relatorio(renavam, false, validacaoDeVeiculos.getTipoCarroSave(), placasAbordada,  validacaoDeVeiculos.getMarcaCarroSave(), nomeVeiculo, validacaoDeVeiculos.getAnoCarroSave(), ipva, licenciamento, habilitacao, portaHabilitacao, portaDocumentos, debitosVeiculo);
                 } else if (habilitacao.equalsIgnoreCase("s") && !portaHabilitacao.equalsIgnoreCase("s") && portaDocumentos.equalsIgnoreCase("s") && debitosVeiculo == 0) {
                     multa = 450;
                     debitosVeiculo += multa;
-                    situacao.relatorio(renavam, false, validacaoDeVeiculos.getTipoCarroSave(), marcaVeiculo, nomeVeiculo, anoVeiculo, placasAbordada, ipva, licenciamento, habilitacao, portaHabilitacao, portaDocumentos, debitosVeiculo);
+                    situacao.relatorio(renavam, false, validacaoDeVeiculos.getTipoCarroSave(),  validacaoDeVeiculos.getMarcaCarroSave(), nomeVeiculo, validacaoDeVeiculos.getAnoCarroSave(), placasAbordada, ipva, licenciamento, habilitacao, portaHabilitacao, portaDocumentos, debitosVeiculo);
                 } else if (habilitacao.equalsIgnoreCase("s") && portaHabilitacao.equalsIgnoreCase("s") && !portaDocumentos.equalsIgnoreCase("s") && debitosVeiculo == 0) {
                     debitosVeiculo += multa;
-                    situacao.relatorio(renavam, true, validacaoDeVeiculos.getTipoCarroSave(), marcaVeiculo, nomeVeiculo, anoVeiculo, placasAbordada, ipva, licenciamento, habilitacao, portaHabilitacao, portaDocumentos, debitosVeiculo);
+                    situacao.relatorio(renavam, true, validacaoDeVeiculos.getTipoCarroSave(), validacaoDeVeiculos.getMarcaCarroSave(), nomeVeiculo, validacaoDeVeiculos.getAnoCarroSave(), placasAbordada, ipva, licenciamento, habilitacao, portaHabilitacao, portaDocumentos, debitosVeiculo);
                 } else if (debitosVeiculo != 0) {
                     multa = 320;
                     debitosVeiculo += multa;
-                    situacao.relatorio(renavam, false, validacaoDeVeiculos.getTipoCarroSave(), marcaVeiculo, nomeVeiculo, anoVeiculo, placasAbordada, ipva, licenciamento, habilitacao, portaHabilitacao, portaDocumentos, debitosVeiculo);
+                    situacao.relatorio(renavam, false, validacaoDeVeiculos.getTipoCarroSave(),  validacaoDeVeiculos.getMarcaCarroSave(), nomeVeiculo, validacaoDeVeiculos.getAnoCarroSave(), placasAbordada, ipva, licenciamento, habilitacao, portaHabilitacao, portaDocumentos, debitosVeiculo);
                 } else {
                     multa = 815.80;
                     debitosVeiculo += multa;
-                    situacao.relatorio(renavam, false, validacaoDeVeiculos.getTipoCarroSave(), marcaVeiculo, nomeVeiculo, anoVeiculo, placasAbordada, ipva, licenciamento, habilitacao, portaHabilitacao, portaDocumentos, debitosVeiculo);
+                    situacao.relatorio(renavam, false, validacaoDeVeiculos.getTipoCarroSave(),  validacaoDeVeiculos.getMarcaCarroSave(), nomeVeiculo, validacaoDeVeiculos.getAnoCarroSave(), placasAbordada, ipva, licenciamento, habilitacao, portaHabilitacao, portaDocumentos, debitosVeiculo);
                 }
             }
         }
