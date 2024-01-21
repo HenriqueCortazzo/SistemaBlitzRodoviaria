@@ -6,7 +6,6 @@ public class ValidacaoDeVeiculos {
     private final String[] tipoVeiculos = {"Carro", "Moto", "Quadriciclo", "Microônibus", "Ônibus", "Reboque", "Caminhão", "Caminhonete", "Trator", "Guindaste", "Munck"};
 
     private final String[] marcaVeiculos = {"Volvo","Agrale","Audi","Iveco", "BMW","Citroen", "Chevrolet", "Dodge", "FIAT", "Ferrari", "Ford", "Honda", "Jeep", "Kia", "Lamborghini", "Land Rover", "Mercedes", "Nissan", "Peugeot", "Porsche", "Renault", "Toyota", "Volkswagen"};
-
     private String tipoCarroSave = "";
     private String marcaCarroSave = "";
 
@@ -24,7 +23,7 @@ public class ValidacaoDeVeiculos {
         if (!veiculoValidado) {
             do {
                 System.out.println("Esse tipo de veiculo não é aceitável");
-                System.out.println("Digite outro tipo: ");
+                System.out.println("Digite um tipo válido: ");
                 tipo = scanner.next();
                 validarTipoVeiculo(tipo);
             } while (tipoCarroSave.equalsIgnoreCase(""));
@@ -39,8 +38,8 @@ public class ValidacaoDeVeiculos {
         }
         if (!veiculoValidado) {
             do {
-                System.out.println("Esse tipo de veiculo não é aceitável");
-                System.out.println("Digite outro tipo: ");
+                System.out.println("Essa marca de veiculo não é aceitável");
+                System.out.println("Digite uma marca válida: ");
                 marca = scanner.next();
                 validarMarcaVeiculo(marca);
             } while (marca.equalsIgnoreCase(""));
