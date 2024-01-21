@@ -53,6 +53,7 @@ public class Abordagem {
                 String nomeVeiculo = scanner.next();
                 System.out.println("ANO DO VEÍCULO: ");
                 String anoVeiculo = scanner.next();
+                validacaoDeVeiculos.validarAnoVeiculo(anoVeiculo);
                 System.out.println("DIGITE O VALOR DO IPVA EM ABERTO: ");
                 double ipva = scanner.nextDouble();
                 System.out.println("DIGITE O VALOR DO LICENCIAMENTO EM ABERTO:");
