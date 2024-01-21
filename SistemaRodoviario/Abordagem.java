@@ -48,6 +48,7 @@ public class Abordagem {
                 long renavam = randomVeiculos.renavam();
                 System.out.println("MARCA DO VEÍCULO: ");
                 String marcaVeiculo = scanner.next();
+                validacaoDeVeiculos.validarMarcaVeiculo(marcaVeiculo);
                 System.out.println("NOME DO VEÍCULO: ");
                 String nomeVeiculo = scanner.next();
                 System.out.println("ANO DO VEÍCULO: ");
